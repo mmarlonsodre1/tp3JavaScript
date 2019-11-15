@@ -15,16 +15,15 @@ mydiv.appendChild(aprovado);
 mydiv.appendChild(rejeitados);
 mydiv.appendChild(rodape);
 
-var arrayAlunos = [];
-var aprovados = 0;
-var reprovados = 0;
-
-
 function relatorio() {
     titulo.innerHTML = "";
-    aprovados.innerHTML = "";
+    aprovado.innerHTML = "";
     rejeitados.innerHTML = "";
     rodape.innerHTML = "";
+
+    var arrayAlunos = [];
+    var aprovados = 0;
+    var reprovados = 0;
 
     titulo.appendChild(document.createTextNode('Meu Relatorio'));
     for (let i = 1; i <= 20; i++) {
@@ -45,5 +44,6 @@ function relatorio() {
             rejeitados.appendChild(document.createElement('BR'));
         }
     }
-    rodape.appendChild(document.createTextNode(`APROVADOS ${(aprovados / arrayAlunos.length) * 100}% | REPROVADOS ${(reprovados / arrayAlunos.length) * 100}%`));
+    rodape.appendChild(document.createTextNode(`APROVADOS (${aprovados}) ${(aprovados / arrayAlunos.length) * 100}% 
+            | REPROVADOS (${reprovados})${(reprovados / arrayAlunos.length) * 100}%`));
 }
